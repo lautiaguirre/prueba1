@@ -1,31 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root {
-  --purple-dark:  #A556C6;
-  --purple-light: #F48BFF;
-  --teal-dark:    #6AAAA9;
-  --teal-light:   #9BC4C2;
-  --accent:       #FB5301;
-  --font-family: 'Nunito Sans', sans-serif;
+  --purple1: #A556C6;
+  --purple2: #F48BFF;
+  --teal1:   #6AAAA9;
+  --teal2:   #9BC4C2;
+  --accent:  #FB5301;
+  --font: 'Nunito Sans', sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
-
 body {
-  font-family: var(--font-family);
-  color: var(--purple-dark);
-  line-height: 1.6;
+  font-family: var(--font);
+  color: var(--purple1);
   background: #fff;
+  line-height: 1.6;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
 /* NAVBAR */
 .navbar {
@@ -33,31 +26,15 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: var(--teal-dark);
+  background: var(--teal1);
 }
-
-.logo img {
-  height: 60px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li + li {
-  margin-left: 1.5rem;
-}
-
+.logo img { height: 70px; /* +10px */ }
+.nav-links { list-style: none; display: flex; }
+.nav-links li + li { margin-left: 1.5rem; }
 .nav-links a {
-  color: #fff;
-  font-weight: 600;
-  transition: color .3s;
+  color: #fff; font-weight: 600; transition: color .3s;
 }
-
-.nav-links a:hover {
-  color: var(--accent);
-}
+.nav-links a:hover { color: var(--accent); }
 
 /* HERO */
 .hero {
@@ -65,45 +42,35 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 4rem 2rem;
-  overflow: hidden;
-  background: var(--purple-light);
+  padding: 4.8rem 2.4rem; /* +20% */
+  background: var(--purple2);
   color: #fff;
+  overflow: hidden;
 }
-
-/* Logo difuminado */
+/* Logo detras SIN blur */
 .hero::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60%;
-  height: 60%;
+  top: 50%; left: 50%;
+  width: 60%; height: 60%;
   background: url('../images/logo.png') no-repeat center;
   background-size: contain;
-  opacity: 0.5;
-  filter: blur(20px);
+  opacity: 0.7;
   transform: translate(-50%, -50%);
   z-index: 0;
 }
-
 .hero-content {
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
   flex: 1 1 300px;
   max-width: 300px;
+  align-self: flex-start; /* primer tercio */
 }
-
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: .5rem;
+  font-size: 3rem; margin-bottom: .5rem;
 }
-
 .hero-content .slogan {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem; margin-bottom: 1.5rem;
 }
-
 .btn-primary {
   display: inline-block;
   padding: .75rem 2rem;
@@ -113,32 +80,25 @@ a {
   font-weight: 600;
   transition: background .3s;
 }
-
-.btn-primary:hover {
-  background: var(--purple-dark);
-}
+.btn-primary:hover { background: var(--purple1); }
 
 .hero-center {
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
   flex: 1 1 300px;
   text-align: center;
 }
-
 .founder-photo {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 50%;
-  border: 4px solid #fff;
+  width: 100%; max-width: 250px;
+  border-radius: 50%; border: 4px solid #fff;
 }
 
 .hero-about {
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
   flex: 1 1 300px;
   padding: 1rem;
+  align-self: flex-start; /* alineado arriba */
+  text-align: left;
 }
-
 .hero-about h2 {
   font-size: 2rem;
   margin-bottom: .5rem;
@@ -146,93 +106,81 @@ a {
 
 /* SERVICIOS */
 .services {
-  padding: 4rem 2rem;
+  padding: 4.8rem 2.4rem; /* +20% */
 }
-
 .services h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--purple-dark);
+  font-size: 2.5rem; margin-bottom: 2rem;
+  text-align: center; color: var(--purple1);
 }
-
 .services-list {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr; /* ahora iguales */
   gap: 2rem;
-  align-items: start;
 }
-
 .service-item {
-  background: var(--teal-light);
+  background: var(--teal2);
   padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
 }
-
 .service-item h3 {
-  margin-bottom: 1rem;
-  color: var(--purple-dark);
+  margin-bottom: 1rem; color: var(--purple1);
 }
-
 .service-item img {
   width: 100%;
+  height: auto;
   border-radius: 4px;
+  object-fit: cover;
 }
 
 /* CÓMO TRABAJAMOS */
 .how-we-work {
-  padding: 4rem 2rem;
-  background: var(--teal-dark);
+  padding: 4.8rem 2.4rem; /* +20% */
+  background: var(--teal1);
   color: #fff;
   text-align: center;
 }
-
 .how-we-work h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem; margin-bottom: 1.5rem;
 }
-
 .how-we-work p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.8;
+  max-width: 700px; margin: 0 auto;
+  font-size: 1rem; line-height: 1.8;
 }
 
 /* CONTACTO */
 .contact {
-  padding: 4rem 2rem;
+  padding: 4.8rem 2.4rem; /* +20% */
   text-align: center;
 }
-
 .contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--purple-dark);
+  font-size: 2.5rem; margin-bottom: 1rem;
+  color: var(--purple1);
 }
-
+.divider {
+  width: 80%; margin: .5rem auto 2rem;
+  border: 0; border-top: 1px solid var(--teal2);
+}
 .contact ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
   list-style: none;
 }
-
 .contact li {
-  margin: .75rem 0;
   font-size: 1.1rem;
 }
-
 .icon-social {
-  width: 24px;
-  vertical-align: middle;
+  width: 24px; vertical-align: middle;
   margin-right: .5rem;
 }
 
 /* FOOTER */
 footer {
-  background: var(--purple-dark);
+  background: var(--purple1);
   color: #fff;
   text-align: center;
-  padding: 1.5rem 2rem;
+  padding: 1.8rem 2rem; /* +20% */
   font-size: .9rem;
 }
 
@@ -245,8 +193,14 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-  .hero-content, .hero-center, .hero-about {
+  .hero-content,
+  .hero-center,
+  .hero-about {
     max-width: 100%;
     margin-bottom: 2rem;
+    align-self: center;
+  }
+  .contact ul {
+    flex-direction: column;
   }
 }
