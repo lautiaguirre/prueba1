@@ -36,12 +36,12 @@ a { text-decoration: none; color: inherit; }
 }
 .nav-links a:hover { color: var(--accent); }
 
-/* HERO */
+/* HERO: reestructurado con grid */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  padding: 4.8rem 2.4rem;
+  padding: 4.8rem 2.4rem; /* +20% */
   background: var(--purple2);
   color: #fff;
   position: relative;
@@ -58,17 +58,12 @@ a { text-decoration: none; color: inherit; }
   transform: translate(-50%, -50%);
   z-index: 0;
 }
-
-/* DESPLAZAMIENTOS de 3cm */
 .hero-content {
   grid-column: 1 / 2;
   justify-self: center;
   align-self: center;
   text-align: center;
   z-index: 1;
-  position: relative;
-  top: 1.5cm;
-  left: 1.5cm;
 }
 .hero-content h1 {
   font-size: 3rem; margin-bottom: .5rem;
@@ -101,11 +96,9 @@ a { text-decoration: none; color: inherit; }
 .hero-about {
   grid-column: 3 / 4;
   justify-self: center;
-  align-self: start;
+  align-self: start; /* arranca en la misma altura que la foto */
   text-align: center;
   z-index: 1;
-  position: relative;
-  left: 1.5cm;
 }
 .hero-about h2 {
   font-size: 2rem; margin-bottom: .5rem;
@@ -113,7 +106,7 @@ a { text-decoration: none; color: inherit; }
 
 /* SERVICIOS */
 .services {
-  padding: 4.8rem 2.4rem;
+  padding: 4.8rem 2.4rem; /* +20% */
 }
 .services h2 {
   font-size: 2.5rem; margin-bottom: 2rem;
@@ -140,7 +133,7 @@ a { text-decoration: none; color: inherit; }
 
 /* CÓMO TRABAJAMOS */
 .how-we-work {
-  padding: 5.76rem 2.4rem;
+  padding: 5.76rem 2.4rem; /* +20% sobre 4.8rem */
   background: var(--teal1);
   color: #fff;
   text-align: center;
@@ -155,7 +148,7 @@ a { text-decoration: none; color: inherit; }
 
 /* CONTACTO */
 .contact {
-  padding: 5.76rem 2.4rem;
+  padding: 5.76rem 2.4rem; /* +20% sobre 4.8rem */
   text-align: center;
 }
 .contact h2 {
@@ -203,9 +196,9 @@ footer {
     grid-column: 1;
     margin-bottom: 2rem;
     align-self: center;
-    top: 0; left: 0; /* deshacer desplazamiento en móvil */
   }
   .contact ul {
     flex-direction: column;
   }
 }
+
